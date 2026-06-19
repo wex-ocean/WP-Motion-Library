@@ -19,6 +19,7 @@ final class Plugin {
         load_plugin_textdomain( 'wp-motion-library', false, dirname( plugin_basename( WPML_FILE ) ) . '/languages' );
 
         Icon_Registry::instance();
+        Rest\Rest_Controller::instance();
 
         if ( is_admin() ) {
             Admin\Admin::instance();

@@ -36,24 +36,36 @@ final class Admin {
         if ( ! current_user_can( 'manage_options' ) ) {
             return;
         }
-        ?>
-        <div class="wrap">
-            <h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
-            <p><?php esc_html_e( 'Welcome to WP Motion Library. More settings coming soon.', 'wp-motion-library' ); ?></p>
-        </div>
-        <?php
+        echo '<div class="wrap"><h1>' . esc_html( get_admin_page_title() ) . '</h1>'
+           . '<div id="wpml-admin-root"></div></div>';
     }
 
     public function enqueue_assets( string $hook ): void {
         if ( 'toplevel_page_wp-motion-library' !== $hook ) {
             return;
         }
+
         wp_enqueue_style(
             'wpml-admin',
             WPML_URL . 'assets/css/admin.css',
             [],
             WPML_VERSION
         );
+
+        wp_enqueue_script(
+            'wpml-admin-app',
+            WPML_URL . 'assets/js/admin-app.js',
+            [ 'wp-element' ],
+            WPML_VERSION,
+            true
+        );
+
+        wp_localize_script( 'wpml-admin-app', 'wpmlAdmin', [
+            'restUrl'  => esc_url_raw( rest_url( 'wpml/v1/icons' ) ),
+            'nonce'    => wp_create_nonce( 'wp_rest' ),
+            'iconsUrl' => esc_url_raw( WPML_URL . 'assets/icons/' ),
+            'isPremium' => false, // flip to true when license is active.
+        ] );
     }
 
     private function __construct() {}
