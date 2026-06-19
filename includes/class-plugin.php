@@ -18,6 +18,8 @@ final class Plugin {
     private function init(): void {
         load_plugin_textdomain( 'wp-motion-library', false, dirname( plugin_basename( WPML_FILE ) ) . '/languages' );
 
+        Icon_Registry::instance();
+
         if ( is_admin() ) {
             Admin\Admin::instance();
         }
@@ -38,6 +40,7 @@ final class Plugin {
     }
 
     public static function activate(): void {
+        Icon_Registry::flush_cache();
         flush_rewrite_rules();
     }
 

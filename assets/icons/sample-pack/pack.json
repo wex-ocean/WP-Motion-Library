@@ -1,0 +1,52 @@
+[
+    {
+        "id":         "arrow-right",
+        "name":       "Arrow Right",
+        "category":   "arrows",
+        "tags":       ["arrow", "right", "direction", "navigate"],
+        "type":       "svg",
+        "file":       "sample-pack/arrow-right.svg",
+        "is_premium": false,
+        "pack":       "sample-pack"
+    },
+    {
+        "id":         "arrow-left",
+        "name":       "Arrow Left",
+        "category":   "arrows",
+        "tags":       ["arrow", "left", "direction", "back"],
+        "type":       "svg",
+        "file":       "sample-pack/arrow-left.svg",
+        "is_premium": false,
+        "pack":       "sample-pack"
+    },
+    {
+        "id":         "checkmark",
+        "name":       "Checkmark",
+        "category":   "ui",
+        "tags":       ["check", "done", "success", "tick"],
+        "type":       "svg",
+        "file":       "sample-pack/checkmark.svg",
+        "is_premium": false,
+        "pack":       "sample-pack"
+    },
+    {
+        "id":         "loading-spinner",
+        "name":       "Loading Spinner",
+        "category":   "ui",
+        "tags":       ["loading", "spinner", "animation", "loop"],
+        "type":       "lottie",
+        "file":       "sample-pack/loading-spinner.json",
+        "is_premium": false,
+        "pack":       "sample-pack"
+    },
+    {
+        "id":         "confetti-burst",
+        "name":       "Confetti Burst",
+        "category":   "celebrations",
+        "tags":       ["confetti", "celebrate", "burst", "party"],
+        "type":       "lottie",
+        "file":       "sample-pack/confetti-burst.json",
+        "is_premium": true,
+        "pack":       "sample-pack"
+    }
+]
